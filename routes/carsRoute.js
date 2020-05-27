@@ -18,7 +18,7 @@ router
             const newCar = req.body;
             db('cars')
                 .insert(newCar)
-                .then( car => req.status(200).json(car) )
+                .then( car => res.status(200).json({car}) )
                 .catch( () => res.status(501).json(catchPost("car", "inventory")) )
         })
 router
